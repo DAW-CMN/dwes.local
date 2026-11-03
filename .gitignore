@@ -1,0 +1,18 @@
+# Recursos de apoyo excluidos siguiendo el enunciado de la práctica 7.
+# La carpeta public se utilizará al reorganizar la plantilla en la práctica 8.1.
+/public/
+/bootstrap/
+/font-awesome/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+
+# Descargas, registros y archivos temporales.
+*.zip
+*.7z
+*.log
+*.tmp
+Thumbs.db
+.DS_Store
