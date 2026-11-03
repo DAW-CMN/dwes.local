@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../src/utils/utils.class.php';
+?>
+
 <!-- Navigation Bar -->
    <nav class="navbar navbar-fixed-top navbar-default">
      <div class="container">
@@ -14,10 +18,42 @@
          </div>
          <div class="collapse navbar-collapse navbar-right" id="menu">
             <ul class="nav navbar-nav">
-              <li class="active lien"><a href="index.php"><i class="fa fa-home sr-icons"></i> Home</a></li>
-              <li class=" lien"><a href="about.php"><i class="fa fa-bookmark sr-icons"></i> About</a></li>
-              <li class=" lien"><a href="blog.php"><i class="fa fa-file-text sr-icons"></i> Blog</a></li>
-              <li><a href="contact.php"><i class="fa fa-phone-square sr-icons"></i> Contact</a></li>
+              <?php
+              if (Utils::esOpcionMenuActiva('/index.php') || Utils::esOpcionMenuActiva('/')) {
+                  echo '<li class="active lien">';
+              } else {
+                  echo '<li class="lien">';
+              }
+              ?>
+                <a href="index.php"><i class="fa fa-home sr-icons"></i> Home</a>
+              </li>
+              <?php
+              if (Utils::esOpcionMenuActiva('/about.php')) {
+                  echo '<li class="active lien">';
+              } else {
+                  echo '<li class="lien">';
+              }
+              ?>
+                <a href="about.php"><i class="fa fa-bookmark sr-icons"></i> About</a>
+              </li>
+              <?php
+              if (Utils::esOpcionMenuActiva('/blog.php') || Utils::esOpcionMenuActiva('/single_post.php')) {
+                  echo '<li class="active lien">';
+              } else {
+                  echo '<li class="lien">';
+              }
+              ?>
+                <a href="blog.php"><i class="fa fa-file-text sr-icons"></i> Blog</a>
+              </li>
+              <?php
+              if (Utils::esOpcionMenuActiva('/contact.php')) {
+                  echo '<li class="active lien">';
+              } else {
+                  echo '<li class="lien">';
+              }
+              ?>
+                <a href="contact.php"><i class="fa fa-phone-square sr-icons"></i> Contact</a>
+              </li>
             </ul>
          </div>
      </div>
