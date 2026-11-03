@@ -1,5 +1,5 @@
 # Recursos de apoyo excluidos siguiendo el enunciado de la práctica 7.
-# La carpeta public se utilizará al reorganizar la plantilla en la práctica 8.1.
+# Los recursos de apoyo de la plantilla están en public y no se versionan.
 /public/
 /bootstrap/
 /font-awesome/
