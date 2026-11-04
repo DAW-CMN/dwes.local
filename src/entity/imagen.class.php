@@ -5,6 +5,7 @@ class Imagen
     public const RUTA_IMAGENES_PORTFOLIO = '/public/images/index/portfolio/';
     public const RUTA_IMAGENES_GALERIA = '/public/images/index/gallery/';
     public const RUTA_IMAGENES_CLIENTES = '/public/images/clients/';
+    public const RUTA_IMAGENES_SUBIDAS = '/public/images/galeria/';
 
     private int $id = 0;
     private string $nombre;
