@@ -63,6 +63,15 @@ require_once __DIR__ . '/../src/utils/utils.class.php';
               ?>
                 <a href="galeria.php"><i class="fa fa-image sr-icons"></i> Galería</a>
               </li>
+              <?php
+              if (Utils::esOpcionMenuActiva('/asociados.php')) {
+                  echo '<li class="active lien">';
+              } else {
+                  echo '<li class="lien">';
+              }
+              ?>
+                <a href="asociados.php"><i class="fa fa-users sr-icons"></i> Asociados</a>
+              </li>
             </ul>
          </div>
      </div>

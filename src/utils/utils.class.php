@@ -10,4 +10,15 @@ class Utils
 
         return $paginaActual === $opcion;
     }
+
+    public static function extraeElementosAleatorios(array $lista, int $cantidad): ?array
+    {
+        if ($cantidad < 1 || count($lista) === 0) {
+            return null;
+        }
+
+        shuffle($lista);
+        $listaNueva = array_chunk($lista, $cantidad);
+        return $listaNueva[0];
+    }
 }

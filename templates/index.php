@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__ . '/../src/entity/imagen.class.php';
+require_once __DIR__ . '/../src/entity/asociado.class.php';
+require_once __DIR__ . '/../src/utils/utils.class.php';
 
 $imagenesHome = [
     new Imagen('1.jpg', 'descripción imagen 1', 1, 456, 610, 130),
@@ -15,5 +17,12 @@ $imagenesHome = [
     new Imagen('11.jpg', 'descripción imagen 11', 3, 1000, 500, 100),
     new Imagen('12.jpg', 'descripción imagen 12', 3, 1000, 500, 100),
 ];
+
+$asociados = [
+    new Asociado('First Partner Name', 'log2.jpg', 'Logo de First Partner Name'),
+    new Asociado('Second Partner Name', 'log1.jpg', 'Logo de Second Partner Name'),
+    new Asociado('Third Partner Name', 'log3.jpg', 'Logo de Third Partner Name'),
+];
+$asociados = Utils::extraeElementosAleatorios($asociados, 3) ?? [];
 
 require_once __DIR__ . '/views/index.view.php';
