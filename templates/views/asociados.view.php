@@ -45,6 +45,12 @@ require_once __DIR__ . '/../navegacion.part.php';
                         <div class="col-xs-12">
                             <label class="control-label" for="logo">Logo</label>
                             <input class="form-control-file" type="file" id="logo" name="logo">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label class="control-label" for="codigo-captcha">Introduce el captcha <img src="/src/utils/captcha.php" id="captcha" alt="Código de seguridad" style="border: 1px solid #D3D0D0;"></label>
+                            <input class="form-control" type="text" id="codigo-captcha" name="captcha" autocomplete="off">
                             <button type="submit" class="pull-right btn btn-lg sr-button">ENVIAR</button>
                         </div>
                     </div>

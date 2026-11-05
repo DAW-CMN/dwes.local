@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once __DIR__ . '/../src/entity/asociado.class.php';
 require_once __DIR__ . '/../src/utils/File.class.php';
 
@@ -12,7 +14,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = trim(is_string($_POST['nombre'] ?? null) ? $_POST['nombre'] : '');
     $descripcion = trim(is_string($_POST['descripcion'] ?? null) ? $_POST['descripcion'] : '');
 
-    if ($nombre === '') {
+    $captchaIntroducido = is_string($_POST['captcha'] ?? null) ? $_POST['captcha'] : '';
+
+    if ($captchaIntroducido === '') {
+        $errores[] = 'Introduzca el código de seguridad.';
+    } elseif (!isset($_SESSION['captchaGenerado']) || $_SESSION['captchaGenerado'] !== $captchaIntroducido) {
+        $errores[] = '¡Ha introducido un código de seguridad incorrecto! Inténtelo de nuevo.';
+    }
+
+    if (!empty($errores)) {
+        $nombre = '';
+        $descripcion = '';
+    } elseif ($nombre === '') {
         $errores[] = 'El nombre es obligatorio';
     }
 
